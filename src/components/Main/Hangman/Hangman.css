@@ -4,6 +4,41 @@
     padding: 1em;
 }
 
+/* Hangman Body */
+
+.hangman--head {
+    border: 2px solid #000;
+    border-radius: 50%;
+    grid-column: 4 / span 2;
+    grid-row: 2;
+}
+
+.hangman--leftarm {
+    border-right: 1px solid #000;
+    grid-column: 3 / span 2;
+    grid-row: 3;
+}
+
+.hangman--rightarm {
+    border-left: 1px solid #000;
+    grid-column: 5 / span 2;
+    grid-row: 3;
+}
+
+.hangman--leftleg {
+    grid-column: 3 / span 2;
+    grid-row: 5;
+}
+
+.hangman--rightleg {
+    grid-column: 5 / span 2;
+    grid-row: 5;
+}
+
+
+
+/* Hangman Construction */
+
 .hangman--1 {
     border-right: 2px solid #000;
     border-bottom: 4px solid #000;
@@ -31,25 +66,6 @@
     grid-row: 1;
 }
 
-.hangman--head {
-    border: 2px solid #000;
-    border-radius: 50%;
-    grid-column: 4 / span 2;
-    grid-row: 2;
-}
-
-.hangman--leftarm {
-    border-right: 1px solid #000;
-    grid-column: 3 / span 2;
-    grid-row: 3;
-}
-
-.hangman--rightarm {
-    border-left: 1px solid #000;
-    grid-column: 5 / span 2;
-    grid-row: 3;
-}
-
 .hangman--5 {
     border-right: 1px solid #000;
     grid-column: 3 / span 2;
@@ -69,18 +85,13 @@
     grid-row: 2 / -1;
 }
 
-.hangman--leftleg {
-    grid-column: 3 / span 2;
-    grid-row: 5;
-}
 
-.hangman--rightleg {
-    grid-column: 5 / span 2;
-    grid-row: 5;
-}
+/* Hangman Images */
+
 
 .hangman--2--img {
-    width: 40px;
+    width: 45px;
+    height: 45px;
 }
 
 .hangman--leftarm--img,
@@ -93,4 +104,40 @@
 .hangman--rightleg--img {
     width: 50px;
     height: 35px;
+}
+
+
+
+
+@media (min-width: 800px) {
+    .hangman {
+        grid-template: 65px 70px repeat(3, 60px) / repeat(2, 85px) repeat(4, 45px);
+    }
+    
+    .hangman--head {
+        border: 3px solid #000;
+    }
+
+    .hangman--leftarm,
+    .hangman--5 {
+        border-right: 2px solid #000;
+    }
+
+    .hangman--leftarm--img,
+    .hangman--rightarm--img {
+        width: 88px;
+        height: 60px;
+    }
+
+    .hangman--2--img {
+        width: 70px;
+        height: 65px;
+    }
+
+    .hangman--leftleg--img,
+    .hangman--rightleg--img {
+        width: 90px;
+        height: 55px;
+    }
+
 }

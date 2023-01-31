@@ -1,5 +1,5 @@
 import "./Hangman.css"
-import line1 from "../../../images/line-1.png"
+import line1 from "../../../images/line-11.png"
 import line2 from "../../../images/line-2.png"
 import line3 from "../../../images/line-3.png"
 import line4 from "../../../images/line-4.png"
