@@ -1,8 +1,10 @@
 import "./RandomWord.css"
 
-function RandomWord(){
+function RandomWord(props){
     return(
-        <div className="randomWord">RandomWord</div>
+        <div className="randomWord">
+            
+        </div>
     )
 }
 

@@ -1,11 +1,15 @@
 import "./Navbar.css"
-import hangman from "../../images/hangman.png"
+import hangman from "../../images/dhangman.png"
 
 function Navbar(){
     return(
         <div className="navbar">
             <img src={hangman} alt="hangman logo" className="navbar--logo" />
-            <h3 className="navbar--title">Hangman</h3>
+            <div className="navbar--title--container">                
+                <h3 className="navbar--title">Hangman</h3>
+                <p className="navbar--subtitle">Dare to die</p>
+            </div>
+            <button className="navbar--newgame">New Game</button>
         </div>
     )
 }

@@ -4,12 +4,12 @@ import RandomWord from "./RandomWord/RandomWord"
 import Hangman from "./Hangman/Hangman"
 import "./Main.css"
 
-function Main(){
+function Main(props){
     return(
         <div className="main">
             <Score />
             <Hangman />
-            <RandomWord />
+            <RandomWord allWords={props.allWords} />
             <Letters />
         </div>
     )

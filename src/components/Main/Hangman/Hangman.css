@@ -7,20 +7,20 @@
 /* Hangman Body */
 
 .hangman--head {
-    border: 2px solid #000;
+    border: 2px solid #fff;
     border-radius: 50%;
     grid-column: 4 / span 2;
     grid-row: 2;
 }
 
 .hangman--leftarm {
-    border-right: 1px solid #000;
+    border-right: 1px solid #fff;
     grid-column: 3 / span 2;
     grid-row: 3;
 }
 
 .hangman--rightarm {
-    border-left: 1px solid #000;
+    border-left: 1px solid #fff;
     grid-column: 5 / span 2;
     grid-row: 3;
 }
@@ -40,47 +40,47 @@
 /* Hangman Construction */
 
 .hangman--1 {
-    border-right: 2px solid #000;
-    border-bottom: 4px solid #000;
+    border-right: 2px solid #fff;
+    border-bottom: 4px solid #fff;
     grid-column: 1;
     grid-row: 1 / -1;
 }
 
 .hangman--2 {
-    border-top: 4px solid #000;
-    border-left: 2px solid #000;
+    border-top: 4px solid #fff;
+    border-left: 2px solid #fff;
     grid-column: 2;
     grid-row: 1;
 }
 
 .hangman--3 {
-    border-top: 4px solid #000;
-    border-right: 1px solid #000;
+    border-top: 4px solid #fff;
+    border-right: 1px solid #fff;
     grid-column: 3 / span 2;
     grid-row: 1;
 }
 
 .hangman--4 {
-    border-left: 1px solid #000;
+    border-left: 1px solid #fff;
     grid-column: 5 / span 2;
     grid-row: 1;
 }
 
 .hangman--5 {
-    border-right: 1px solid #000;
+    border-right: 1px solid #fff;
     grid-column: 3 / span 2;
     grid-row: 4;
 }
 
 .hangman--6 {
-    border-left: 1px solid #000;
+    border-left: 1px solid #fff;
     grid-column: 5 / span 2;
     grid-row: 4;
 }
 
 .hangman--7 {
-    border-bottom: 4px solid #000;
-    border-left: 2px solid #000;
+    border-bottom: 4px solid #fff;
+    border-left: 2px solid #fff;
     grid-column: 2;
     grid-row: 2 / -1;
 }
@@ -109,18 +109,18 @@
 
 
 
-@media (min-width: 800px) {
+@media (min-width: 400px) {
     .hangman {
         grid-template: 65px 70px repeat(3, 60px) / repeat(2, 85px) repeat(4, 45px);
     }
     
     .hangman--head {
-        border: 3px solid #000;
+        border: 3px solid #fff;
     }
 
     .hangman--leftarm,
     .hangman--5 {
-        border-right: 2px solid #000;
+        border-right: 2px solid #fff;
     }
 
     .hangman--leftarm--img,

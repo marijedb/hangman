@@ -2,6 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid blue;
     padding: 1em;
 }
+

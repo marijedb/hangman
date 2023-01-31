@@ -1,9 +1,9 @@
 import "./Hangman.css"
-import line1 from "../../../images/line-11.png"
-import line2 from "../../../images/line-2.png"
-import line3 from "../../../images/line-3.png"
-import line4 from "../../../images/line-4.png"
-import line5 from "../../../images/line-5.png"
+import line1 from "../../../images/line1.png"
+import line2 from "../../../images/line2.png"
+import line3 from "../../../images/line3.png"
+import line4 from "../../../images/line4.png"
+import line5 from "../../../images/line5.png"
 
 function Hangman(){
     return(
