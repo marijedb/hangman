@@ -9,7 +9,7 @@ function Main(props){
         <div className="main">
             <Score />
             <Hangman />
-            <RandomWord allWords={props.allWords} />
+            <RandomWord randomWord={props.randomWord} />
             <Letters />
         </div>
     )

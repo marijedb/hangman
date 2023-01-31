@@ -1,7 +1,7 @@
 import "./Navbar.css"
 import hangman from "../../images/dhangman.png"
 
-function Navbar(){
+function Navbar(props){
     return(
         <div className="navbar">
             <img src={hangman} alt="hangman logo" className="navbar--logo" />
@@ -9,7 +9,7 @@ function Navbar(){
                 <h3 className="navbar--title">Hangman</h3>
                 <p className="navbar--subtitle">Dare to die</p>
             </div>
-            <button className="navbar--newgame">New Game</button>
+            <button className="navbar--newgame" onClick={props.newGame}>New Game</button>
         </div>
     )
 }

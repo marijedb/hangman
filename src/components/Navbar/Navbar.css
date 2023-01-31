@@ -25,8 +25,9 @@
 
 .navbar--subtitle {
     margin: 0;
-    font-size: .6rem;
-    letter-spacing: 2px;
+    font-size: .5rem;
+    font-weight: 300;
+    letter-spacing: 3px;
 }
 
 .navbar--newgame {
@@ -45,6 +46,11 @@
     margin-left: 3em;
     align-self: center;
     cursor: pointer;
+}
+
+.navbar--newgame:hover,
+.navbar--newgame:focus {
+    background-color: #419a9d;
 }
 
 
