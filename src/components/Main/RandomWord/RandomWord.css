@@ -2,3 +2,9 @@
     border: 2px solid orange;
     padding: 1em;
 }
+
+.randomWord--letter {
+    display: inline;
+    margin: 0;
+    padding: .3em;
+}

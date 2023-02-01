@@ -5,12 +5,15 @@ import Hangman from "./Hangman/Hangman"
 import "./Main.css"
 
 function Main(props){
+
+    console.log(props.letters)
+    // console.log(props.randomWord)
     return(
         <div className="main">
             <Score />
             <Hangman />
             <RandomWord randomWord={props.randomWord} />
-            <Letters />
+            <Letters letters={props.letters} />
         </div>
     )
 }

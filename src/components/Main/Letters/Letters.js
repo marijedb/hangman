@@ -1,6 +1,7 @@
 import "./Letters.css"
 
-function Letters(){
+function Letters(props){
+    console.log(props.Letters)
     return(
         <div className="letters">Letters</div>
     )
