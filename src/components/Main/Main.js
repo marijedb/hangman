@@ -5,8 +5,9 @@ import Hangman from "./Hangman/Hangman"
 import "./Main.css"
 
 function Main(props){
+    console.log("main")
 
-    console.log(props.letters)
+    console.log("main props.letters ", props.letters)
     // console.log(props.randomWord)
     return(
         <div className="main">

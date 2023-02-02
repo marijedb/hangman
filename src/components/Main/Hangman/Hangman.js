@@ -6,6 +6,7 @@ import line4 from "../../../images/line4.png"
 import line5 from "../../../images/line5.png"
 
 function Hangman(){
+    console.log("hangman")
     return(
         <div className="hangman">
             <div className="hangman--1"></div>
