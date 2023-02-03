@@ -1,4 +1,5 @@
 import "./RandomWord.css"
+import {nanoid} from 'nanoid'
 
 function RandomWord(props){
 
@@ -6,7 +7,7 @@ function RandomWord(props){
         let wordHtml = []
         if(props.randomWord.length > 0) {
             for(let i = 0; i < props.randomWord.length ; i++){
-                wordHtml.push(<p className="randomWord--letter">_</p>)
+                wordHtml.push(<p key={nanoid()} className="randomWord--letter">_</p>)
             }
         }
         return wordHtml
