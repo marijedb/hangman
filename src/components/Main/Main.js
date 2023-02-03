@@ -9,8 +9,8 @@ function Main(props){
         <div className="main">
             <Score />
             <Hangman />
-            <RandomWord randomWord={props.randomWord} />
-            <Letters letters={props.letters} />
+            <RandomWord randomWord={props.randomWord} letters={props.letters}/>
+            <Letters letters={props.letters} checkAnswer={props.checkAnswer} randomWord={props.randomWord}/>
         </div>
     )
 }

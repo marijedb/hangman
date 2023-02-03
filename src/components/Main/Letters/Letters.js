@@ -4,7 +4,18 @@ import {nanoid} from "nanoid"
 function Letters(props){
 
     const lettersHtml = props.letters.map(letter => {
-        return <p key={nanoid()} className="letters--letter">{letter.letter}</p>
+        return <p 
+                    key={nanoid()} 
+                    id={letter.id}
+                    className={letter.clicked === false ? 
+                        "letters--letter" : 
+                        letter.correctAnswer === true ?
+                        "letters--letter correct" :
+                        "letters--letter incorrect"}
+                    onClick={props.randomWord.length > 0 ? props.checkAnswer : props.doNothing}
+                    >
+                        {letter.letter}
+                </p>
     })
 
     return(
@@ -13,3 +24,4 @@ function Letters(props){
 }
 
 export default Letters
+

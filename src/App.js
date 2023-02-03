@@ -36,10 +36,24 @@ function App() {
     setLetters(startingLetters)
 
     const randomNumber = Math.floor(Math.random() * allWords.length)
-    const word = allWords[randomNumber].word
+    const word = [...allWords[randomNumber].word.toUpperCase()]
 
     setRandomWord(word)
   }
+
+  function checkAnswer(event){
+    setLetters(prevLetters => prevLetters.map(letter => {
+      if(letter.id.toString() === event.target.id){
+        return {
+          ...letter,
+          clicked: true
+        } 
+      } else {
+        return letter
+      }
+    }))
+  }
+      
 
   useEffect(() => {
     if (isFirstRender.current) {
@@ -58,7 +72,7 @@ function App() {
     let temp = []
     const newletters = startingLetters.map((letter) => {
       for (let i = 0; i < currentWord.length; i++) {
-        if (letter.letter.toLowerCase() === currentWord[i]) {
+        if (letter.letter === currentWord[i]) {
           temp.push( {
             ...letter,
             correctAnswer: true,
@@ -68,6 +82,7 @@ function App() {
       }
       return temp
     })[0]
+
 
     for(let i = 0; i < newletters.length; i++){
       if(newletters[i - 1] !== undefined && newletters[i].letter === newletters[i - 1].letter){
@@ -100,7 +115,12 @@ function App() {
 
   return ( <div>
     <Navbar newGame = {() => startNewGame()} /> 
-    <Main allWords = {allWords} randomWord = {randomWord} letters = {letters} /> 
+    <Main 
+      allWords = {allWords} 
+      randomWord = {randomWord} 
+      letters = {letters} 
+      checkAnswer={(e) => checkAnswer(e)}
+    /> 
     </div>
   );
 }

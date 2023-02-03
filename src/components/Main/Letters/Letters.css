@@ -21,6 +21,23 @@
     background-color: #419a9d;
 }
 
+.incorrect {
+    background-color: #de0f0f;
+    cursor: not-allowed;
+}
+
+.correct {
+    background-color: #008000;
+    cursor: not-allowed;
+}
+
+.incorrect:hover {
+    background-color: #de0f0f;
+}
+.correct:hover {
+    background-color: #008000;
+}
+
 @media (min-width: 400px){
     .letters--letter {
         font-size: .9rem;
