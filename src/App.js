@@ -8,7 +8,6 @@ import {
 } from 'react';
 
 function App() {
-  console.log("app")
   const [allWords, setAllWords] = useState([])
   const [randomWord, setRandomWord] = useState([])
   const [startingLetters, setStartingLetters] = useState([])
@@ -18,7 +17,6 @@ function App() {
   const isFirstRender2 = useRef(true);
 
   async function getWords() {
-    console.log("get words")
     const response = await fetch('https://marijedb.github.io/my-apis/English-Words/english-words.json')
     const words = await response.json()
     const wordsArray = words.words
@@ -27,32 +25,20 @@ function App() {
   }
 
   async function getStartingLetters() {
-    console.log("starting letters")
     const response = await fetch('https://marijedb.github.io/my-apis/letters/letters.json')
     const data = await response.json()
 
     setStartingLetters([...data.letters])
   }
 
-  // async function getLetters(){
-  //   console.log("get letters")
-  //   const response = await fetch('https://marijedb.github.io/my-apis/letters/letters.json')
-  //   const data = await response.json()
-  //   const allLetters = data.letters
-
-  //   setLetters(allLetters)
-  // }
-
 
   function startNewGame() {
-    console.log("Start new game")
     setLetters(startingLetters)
 
     const randomNumber = Math.floor(Math.random() * allWords.length)
     const word = allWords[randomNumber].word
 
     setRandomWord(word)
-
   }
 
   useEffect(() => {
@@ -68,12 +54,9 @@ function App() {
       isFirstRender2.current = false;
       return;
     }
-    console.log("useeffect after randomword")
     const currentWord = [...randomWord]
-    console.log(currentWord)
     let temp = []
     const newletters = startingLetters.map((letter) => {
-      // console.log(temp)
       for (let i = 0; i < currentWord.length; i++) {
         if (letter.letter.toLowerCase() === currentWord[i]) {
           temp.push( {
@@ -94,12 +77,22 @@ function App() {
         --i
       } 
     }
-    setLetters(newletters)
+
+    let finalLetters = []
+    for(let i = 0; i < startingLetters.length; i++){
+      for(let j = 0; j < newletters.length; j++){
+        if(startingLetters[i].letter.includes(newletters[j].letter)){
+          finalLetters.push(newletters[j])
+          ++i
+        } 
+      }
+      finalLetters.push(startingLetters[i])
+    }
+    setLetters(finalLetters)
     // eslint-disable-next-line react-hooks/exhaustive-deps 
   }, [randomWord])
 
   useEffect(() => {
-    console.log("first useEffect, get words, get letters")
     getWords()
     getStartingLetters()
     // eslint-disable-next-line react-hooks/exhaustive-deps 

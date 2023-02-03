@@ -2,7 +2,6 @@ import "./Navbar.css"
 import hangman from "../../images/dhangman.png"
 
 function Navbar(props){
-    console.log("navbar")
     return(
         <div className="navbar">
             <img src={hangman} alt="hangman logo" className="navbar--logo" />
