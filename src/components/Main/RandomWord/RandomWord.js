@@ -3,7 +3,6 @@ import {nanoid} from 'nanoid'
 
 function RandomWord(props){
 
-
     function displayRandomWord(){
         let word = []
         props.randomWord.forEach(letter => {
@@ -22,6 +21,7 @@ function RandomWord(props){
                                 {letter.clicked ? letter.letter : "_"}
                         </p>) 
         })
+
         return finalWord
     }
 

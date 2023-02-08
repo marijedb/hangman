@@ -2,7 +2,6 @@ import "./Letters.css"
 import {nanoid} from "nanoid"
 
 function Letters(props){
-
     const lettersHtml = props.letters.map(letter => {
         return <p 
                     key={nanoid()} 
@@ -12,7 +11,7 @@ function Letters(props){
                         letter.correctAnswer === true ?
                         "letters--letter correct" :
                         "letters--letter incorrect"}
-                    onClick={props.randomWord.length > 0 ? props.checkAnswer : props.doNothing}
+                    onClick={props.randomWord.length > 0 && props.winningCount !== 0 ? props.checkAnswer : props.doNothing}
                     >
                         {letter.letter}
                 </p>

@@ -1,4 +1,46 @@
 .score {
-    border: 2px solid red;
     padding: 1em;
+    margin: 1em;
+    border: 1px solid #fff;
+    width: 350px;
+    text-align: center;
+}
+
+.score--startgame,
+.score--score,
+.score--gameover,
+.score--gamewon,
+.score--word,
+.score--tryagain {
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 0;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.score--gameover,
+.score--gamewon {
+    font-size: 1.3rem;
+    margin-bottom: .3em;
+}
+
+.score--gamewon {
+    color: #00a72d;
+    text-shadow: 0 0 4px #08631c;
+}
+
+.score--gameover {
+    color: #ea1010;
+    text-shadow: 0 0 4px #990505;
+}
+
+.score--word,
+.score--tryagain {
+    text-transform: none;
+}
+
+.score--tryagain {
+    font-size: .8rem;
+    letter-spacing: 1px;
+    margin-top: .3rem;
 }

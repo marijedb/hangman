@@ -12,6 +12,9 @@ function App() {
   const [randomWord, setRandomWord] = useState([])
   const [startingLetters, setStartingLetters] = useState([])
   const [letters, setLetters] = useState([])
+  const [score, setScore] = useState(6)
+  const [winningCount, setWinningCount] = useState(0)
+
 
   const isFirstRender = useRef(true);
   const isFirstRender2 = useRef(true);
@@ -42,18 +45,58 @@ function App() {
   }
 
   function checkAnswer(event){
-    setLetters(prevLetters => prevLetters.map(letter => {
-      if(letter.id.toString() === event.target.id){
-        return {
-          ...letter,
-          clicked: true
-        } 
-      } else {
-        return letter
-      }
-    }))
+    if(score !== 0){
+      setLetters(prevLetters => prevLetters.map(letter => {
+        if(letter.id.toString() === event.target.id){
+          return {
+            ...letter,
+            clicked: true
+          } 
+        } else {
+          return letter
+        }
+      }))
+    }
   }
       
+function updateScore(){
+  let score = 6;
+  letters.forEach(letter => {
+    if(letter.clicked && !letter.correctAnswer && score !== 0){
+      score -= 1
+    } 
+  })
+  checkWinningCount()
+  setScore(score)
+}
+
+ function checkWinningCount(){
+  let winCount = randomWord.length
+  
+  letters.forEach(letter => {
+    if(letter.correctAnswer){
+      console.log(letter)
+      if(letter.clicked) {
+        if(letter.correctPosition.length > 1){
+          winCount -= letter.correctPosition.length
+        } else {
+          winCount = winCount - 1
+        }
+      }
+    }
+  })
+
+  setWinningCount(winCount)
+}
+
+useEffect(() => {
+  if (isFirstRender.current) {
+    isFirstRender.current = false;
+    return;
+  }
+  updateScore()
+  // eslint-disable-next-line react-hooks/exhaustive-deps 
+}, [letters])
 
   useEffect(() => {
     if (isFirstRender.current) {
@@ -120,6 +163,8 @@ function App() {
       randomWord = {randomWord} 
       letters = {letters} 
       checkAnswer={(e) => checkAnswer(e)}
+      score={score}
+      winningCount={winningCount}
     /> 
     </div>
   );
