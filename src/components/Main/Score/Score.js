@@ -7,13 +7,13 @@ function Score(props){
         if(props.randomWord.length === 0) {
             return <p className="score--startgame">Start a new game!</p>
         } else {
-            if(props.score !== 0){
+            if(props.turnsLeft !== 0){
                 if(props.winningCount !== 0){
-                    return <p className="score--score">{props.score} chances left</p>
+                    return <p className="score--score">{props.turnsLeft} chances left</p>
                 } else {
                     return <div>
                                 <p className="score--gamewon">YOU WON!</p>
-                                <p className="score--score">With {props.score} chances left</p>
+                                <p className="score--score">With {props.turnsLeft} chances left</p>
                             </div>
                 }
             } else {

@@ -15,20 +15,20 @@ function Hangman(props){
             </div>
             <div className="hangman--3"></div>
             <div className="hangman--4"></div>
-            <div className={`hangman--head ${props.score < 6 ? 'show' : "hidden"}`}></div>
-            <div className={`hangman--leftarm ${props.score < 5 ? 'show' : 'hidden'}`}>
-                <img className={`hangman--leftarm--img ${props.score < 4 ? 'show' : 'hidden'}`} src={line2} alt="" />
+            <div className={`hangman--head ${props.turnsLeft < 6 ? 'show' : "hidden"}`}></div>
+            <div className={`hangman--leftarm ${props.turnsLeft < 5 ? 'show' : 'hidden'}`}>
+                <img className={`hangman--leftarm--img ${props.turnsLeft < 4 ? 'show' : 'hidden'}`} src={line2} alt="" />
             </div>
-            <div className={`hangman--rightarm ${props.score < 5 ? 'show' : 'hidden'}`}>
-                <img className={`hangman--rightarm--img ${props.score < 3 ? 'show' : 'hidden'}`} src={line3} alt="" />
+            <div className={`hangman--rightarm ${props.turnsLeft < 5 ? 'show' : 'hidden'}`}>
+                <img className={`hangman--rightarm--img ${props.turnsLeft < 3 ? 'show' : 'hidden'}`} src={line3} alt="" />
             </div>
-            <div className={`hangman--5 ${props.score < 5 ? 'show' : 'hidden'}`}></div>
-            <div className={`hangman--6 ${props.score < 5 ? 'show' : 'hidden'}`}></div>
+            <div className={`hangman--5 ${props.turnsLeft < 5 ? 'show' : 'hidden'}`}></div>
+            <div className={`hangman--6 ${props.turnsLeft < 5 ? 'show' : 'hidden'}`}></div>
             <div className="hangman--7"></div>
-            <div className={`hangman--leftleg ${props.score < 2 ? 'show' : 'hidden'}`}>
+            <div className={`hangman--leftleg ${props.turnsLeft < 2 ? 'show' : 'hidden'}`}>
                 <img className="hangman--leftleg--img" src={line4} alt="" />
             </div>
-            <div className={`hangman--rightleg ${props.score < 1 ? 'show' : 'hidden'}`}>
+            <div className={`hangman--rightleg ${props.turnsLeft < 1 ? 'show' : 'hidden'}`}>
                 <img className="hangman--rightleg--img" src={line5} alt="" />
             </div>
         </div>

@@ -7,8 +7,8 @@ import "./Main.css"
 function Main(props){
     return(
         <div className="main">
-            <Score score={props.score} randomWord={props.randomWord} letters={props.letters} winningCount={props.winningCount}/>
-            <Hangman score={props.score} />
+            <Score turnsLeft={props.turnsLeft} randomWord={props.randomWord} letters={props.letters} winningCount={props.winningCount}/>
+            <Hangman turnsLeft={props.turnsLeft} />
             <RandomWord randomWord={props.randomWord} letters={props.letters} />
             <Letters letters={props.letters} checkAnswer={props.checkAnswer} randomWord={props.randomWord} winningCount={props.winningCount} />
         </div>

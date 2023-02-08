@@ -12,7 +12,7 @@ function App() {
   const [randomWord, setRandomWord] = useState([])
   const [startingLetters, setStartingLetters] = useState([])
   const [letters, setLetters] = useState([])
-  const [score, setScore] = useState(6)
+  const [turnsLeft, setTurnsLeft] = useState(6)
   const [winningCount, setWinningCount] = useState(0)
 
 
@@ -36,16 +36,18 @@ function App() {
 
 
   function startNewGame() {
-    setLetters(startingLetters)
-
-    const randomNumber = Math.floor(Math.random() * allWords.length)
-    const word = [...allWords[randomNumber].word.toUpperCase()]
-
-    setRandomWord(word)
-  }
+    if(turnsLeft === 0 || randomWord.length === 0 || winningCount === 0){
+      setLetters(startingLetters)
+  
+      const randomNumber = Math.floor(Math.random() * allWords.length)
+      const word = [...allWords[randomNumber].word.toUpperCase()]
+  
+      setRandomWord(word)
+    }
+    }
 
   function checkAnswer(event){
-    if(score !== 0){
+    if(turnsLeft !== 0){
       setLetters(prevLetters => prevLetters.map(letter => {
         if(letter.id.toString() === event.target.id){
           return {
@@ -59,15 +61,15 @@ function App() {
     }
   }
       
-function updateScore(){
-  let score = 6;
+function updateTurnsLeft(){
+  let currentTurnsLeft = 6;
   letters.forEach(letter => {
-    if(letter.clicked && !letter.correctAnswer && score !== 0){
-      score -= 1
+    if(letter.clicked && !letter.correctAnswer && currentTurnsLeft !== 0){
+      currentTurnsLeft -= 1
     } 
   })
   checkWinningCount()
-  setScore(score)
+  setTurnsLeft(currentTurnsLeft)
 }
 
  function checkWinningCount(){
@@ -88,12 +90,17 @@ function updateScore(){
   setWinningCount(winCount)
 }
 
+console.log("turnsLeft", turnsLeft)
+console.log("winningCount ", winningCount)
+console.log("randomWord.length ", randomWord.length)
+console.log(randomWord)
+
 useEffect(() => {
   if (isFirstRender.current) {
     isFirstRender.current = false;
     return;
   }
-  updateScore()
+  updateTurnsLeft()
   // eslint-disable-next-line react-hooks/exhaustive-deps 
 }, [letters])
 
@@ -162,7 +169,7 @@ useEffect(() => {
       randomWord = {randomWord} 
       letters = {letters} 
       checkAnswer={(e) => checkAnswer(e)}
-      score={score}
+      turnsLeft={turnsLeft}
       winningCount={winningCount}
     /> 
     </div>
