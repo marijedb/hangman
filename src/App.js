@@ -75,7 +75,6 @@ function updateScore(){
   
   letters.forEach(letter => {
     if(letter.correctAnswer){
-      console.log(letter)
       if(letter.clicked) {
         if(letter.correctPosition.length > 1){
           winCount -= letter.correctPosition.length

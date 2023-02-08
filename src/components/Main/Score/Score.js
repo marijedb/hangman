@@ -20,7 +20,7 @@ function Score(props){
                 return <div>
                             <p className="score--gameover">Game Over!</p>
                             <p className="score--word">The word was: {props.randomWord}</p> 
-                            <p className="score--tryagain">Start a new game to try again :)</p>
+                            <p className="score--tryagain">Start a new game to try again</p>
                         </div>
             }
         }

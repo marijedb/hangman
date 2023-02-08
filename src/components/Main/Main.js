@@ -5,8 +5,6 @@ import Hangman from "./Hangman/Hangman"
 import "./Main.css"
 
 function Main(props){
-    console.log("winning count: ", props.winningCount)
-
     return(
         <div className="main">
             <Score score={props.score} randomWord={props.randomWord} letters={props.letters} winningCount={props.winningCount}/>

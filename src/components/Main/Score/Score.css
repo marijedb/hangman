@@ -1,9 +1,10 @@
 .score {
     padding: 1em;
     margin: 1em;
-    border: 1px solid #fff;
-    width: 350px;
+    /* border: 1px solid #fff; */
+    width: 75%;
     text-align: center;
+    box-shadow: 0 0 3px #fff;
 }
 
 .score--startgame,
@@ -12,6 +13,7 @@
 .score--gamewon,
 .score--word,
 .score--tryagain {
+    font-size: .8rem;
     font-weight: bold;
     letter-spacing: 3px;
     margin: 0;
@@ -20,7 +22,7 @@
 
 .score--gameover,
 .score--gamewon {
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-bottom: .3em;
 }
 
@@ -40,7 +42,54 @@
 }
 
 .score--tryagain {
-    font-size: .8rem;
+    font-size: .6rem;
     letter-spacing: 1px;
     margin-top: .3rem;
+}
+
+@media (min-width: 450px) {
+    .score {
+        width: 350px;
+    }
+
+    .score--startgame,
+    .score--score,
+    .score--gameover,
+    .score--gamewon,
+    .score--word {
+        font-size: 1rem;
+    }
+
+    .score--gameover,
+    .score--gamewon {
+        font-size: 1.3rem;
+    }
+
+    .score--tryagain {
+        font-size: .8rem;
+    }
+}
+
+
+@media (min-width: 750px) {
+    .score {
+        width: 450px;
+    }
+
+    .score--startgame,
+    .score--score,
+    .score--gameover,
+    .score--gamewon,
+    .score--word {
+        font-size: 1.2rem;
+    }
+
+    .score--gameover,
+    .score--gamewon {
+        font-size: 1.5rem;
+    }
+
+    .score--tryagain {
+        font-size: .9rem;
+    }
 }
