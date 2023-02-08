@@ -10,7 +10,7 @@ function Main(props){
     return(
         <div className="main">
             <Score score={props.score} randomWord={props.randomWord} letters={props.letters} winningCount={props.winningCount}/>
-            <Hangman />
+            <Hangman score={props.score} />
             <RandomWord randomWord={props.randomWord} letters={props.letters} />
             <Letters letters={props.letters} checkAnswer={props.checkAnswer} randomWord={props.randomWord} winningCount={props.winningCount} />
         </div>

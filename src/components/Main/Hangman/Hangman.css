@@ -107,6 +107,11 @@
 }
 
 
+.hidden {
+    display: none;
+}
+
+
 
 
 @media (min-width: 400px) {
