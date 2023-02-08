@@ -5,13 +5,17 @@
 .randomWord--letter {
     display: inline;
     margin: 0;
-    padding: .5em;
+    padding: .2em;
     text-decoration: underline;
 }
 
 @media (min-width: 400px) {
     .randomWord--letter {
         font-size: 1.5rem;
+    }
+
+    .randomWord--letter {
+        padding: .5em
     }
     
 }
